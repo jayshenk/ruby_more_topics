@@ -113,11 +113,11 @@ class TodoList
   end
 
   def select
-    result = []
+    list = TodoList.new(title)
     each do |todo|
-      result << todo if yield(todo)
+      list << todo if yield(todo)
     end
-    result
+    list
   end
 end
 
